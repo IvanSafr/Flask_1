@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Новая статья
+{% endblock %}
+
+
+{% block body %}
+<div class="row justify-content-center align-items-center">
+        <div class="col-10 offset offset-1 bg bg-light border border-3 rounded-3">
+            <div class="container">
+                <p></p>
+                <p></p>
+                <h1 aligin="center">Создать новую запись:</h1>
+                <p></p>
+                <form method="post">
+                    <input type="text" name="title" id="title" class="form-control" placeholder="Введите название статьи"><br>
+                    <textarea name="intro" id="intro" class="form-control" placeholder="Введите вступление"></textarea><br>
+                    <textarea name="text" id="text" class="form-control" placeholder="Введите текст статьи"></textarea><br>
+                    <input type="submit" class="btn btn-outline-dark" value="Отправить"><p></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+

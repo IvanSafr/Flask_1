@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+Библиотека
+{% endblock %}
+
+{% block body %}
+<div class="container">
+  {% for post in  posts%}
+    <div class="row justify-content-center align-items-center">
+        <div class="col-10 offset offset-1 bg bg-light border border-3 rounded-3">
+            <span class = "border bg bg-success rounded-pill">
+                {{post.date}}
+            </span>
+            <p></p>
+            <p>{{post.title}}</p>
+            <p>{{post.intro}}</p>
+            <p>{{post.text}}</p>
+        </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
