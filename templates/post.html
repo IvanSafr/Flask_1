@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ post.name}}
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-12  bg bg-light border border-3 rounded rounded-2">
+            <p></p>
+            <p><b><i>Заголовок: </i></b><br>{{post.title}}</p>
+            <p><b><i>Вступление: </i></b><br>{{post.intro}}</p>
+            <p><b><i>Основной текст: </i></b><br>{{post.text}}</p>
+            <p><b><i>Дата: </i></b><br>{{post.date.date()}}</p>
+
+            <a href="/posts/{{post.id}}/delete" class="btn btn-outline-danger ">Удалить</a>
+            <a href="/posts/{{post.id}}/update" class="btn btn-outline-success ">Редактировать</a>
+            <a href="/library" class="btn btn-outline-secondary offset-1">Назад</a>
+            <p></p>
+        </div>
+    </div>
+    <br>
+</div>
+
+{% endblock %}

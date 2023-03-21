@@ -5,20 +5,29 @@
 {% endblock %}
 
 {% block body %}
+
+{% if posts|length > 0 %}
+
 <div class="container">
   {% for post in  posts%}
     <div class="row justify-content-center align-items-center">
         <div class="col-10  bg bg-light border border-3 rounded rounded-2">
-            <span class = "border bg bg-success rounded-pill">
-                {{post.date}}
-            </span>
             <p></p>
-            <p>{{post.title}}</p>
-            <p>{{post.intro}}</p>
-            <button class="btn btn-outline-secondary" link="#">Подробнее</button>
+            <p><b><i>Заголовок: </i></b>{{post.title}}</p>
+            <p><b><i>Вступление: </i></b>{{post.intro}}</p>
+            <p><b><i>Дата: </i></b>{{post.date.date()}}</p>
+            <a href="/posts/{{post.id}}" class="btn btn-outline-secondary">Подробнее</a>
+            <p></p>
         </div>
     </div>
+    <br>
   {% endfor %}
 </div>
-
+{% else %}
+<div class="row justify-content-center align-items-center">
+        <div class="col-10  bg bg-light border border-3 rounded rounded-2">
+            <p>Еще нет статей</p>
+        </div>
+</div>
+{%endif%}
 {% endblock %}
